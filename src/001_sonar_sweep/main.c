@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #define FN "input.txt"
 
 void partOne() {
@@ -19,11 +18,11 @@ void partOne() {
       fscanf(fp, "%d", &curr);
     }
 
-    printf("P1: %d\n", count);
+    printf("[P1] %d\n", count);
 
     fclose(fp);
   } else
-    printf("P1: File error.\n");
+    printf("[P1] File error.\n");
 }
 
 void partTwo() {
@@ -51,11 +50,11 @@ void partTwo() {
       fscanf(fp, "%d", &c);
     }
 
-    printf("P2: %d", count);
+    printf("[P2] %d\n", count);
 
     fclose(fp);
   } else
-    printf("P2: File error.\n");
+    printf("[P2] File error.\n");
 }
 
 int main() {
