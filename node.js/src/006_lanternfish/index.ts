@@ -10,10 +10,10 @@ const fn = path.join(__dirname, 'input.txt'),
   partTwo(256)
 })()
 
-function partOne(symDays: number) {
+function partOne(simDays: number) {
   const fish = fs.readFileSync(fn, { encoding: 'utf-8' }).split(',').map(Number)
 
-  for (let day = 1; day <= symDays; day++) {
+  for (let day = 1; day <= simDays; day++) {
     for (const i in fish) {
       if (fish[i]) fish[i]--
       else {
@@ -26,14 +26,14 @@ function partOne(symDays: number) {
   console.log(`[P1] ${fish.length}`)
 }
 
-function partTwo(symDays: number) {
+function partTwo(simDays: number) {
   const fish = fs.readFileSync(fn, { encoding: 'utf-8' }).split(',').map(Number)
 
   const ocean: number[] = Array(newFishAge + 1).fill(0)
 
   for (const age of fish) ocean[age]++
 
-  for (let day = 1; day <= symDays; day++) {
+  for (let day = 1; day <= simDays; day++) {
     const reproducing = ocean.shift()
     ocean[ageReset] += reproducing
     ocean.push(reproducing)
